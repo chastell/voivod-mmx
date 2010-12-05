@@ -27,3 +27,15 @@ teryt2unit.each do |teryt, unit|
   puts "  official:  #{official[teryt].sort_by  { |committee, count| [-count, committee] }.map { |committee, count| "#{count} #{committee}" }.join ', ' }"
   puts "  potential: #{potential[teryt].sort_by { |committee, count| [-count, committee] }.map { |committee, count| "#{count} #{committee}" }.join ', ' }"
 end
+
+official_summary  = Hash.new 0
+potential_summary = Hash.new 0
+
+teryt2unit.each do |teryt, unit|
+  official[teryt].each  { |committee, count| official_summary[committee]  += count }
+  potential[teryt].each { |committee, count| potential_summary[committee] += count }
+end
+
+puts "summary:"
+puts "  official:  #{official_summary.sort_by  { |committee, count| [-count, committee] }.map { |committee, count| "#{count} #{committee}" }.join ', ' }"
+puts "  potential: #{potential_summary.sort_by { |committee, count| [-count, committee] }.map { |committee, count| "#{count} #{committee}" }.join ', ' }"
