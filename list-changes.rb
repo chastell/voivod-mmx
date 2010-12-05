@@ -24,6 +24,6 @@ teryt2unit = Hash[councillors.map { |c| [c.teryt, c.unit] }]
 
 teryt2unit.each do |teryt, unit|
   puts "#{unit} (#{teryt}):"
-  puts "  official:  #{official[teryt].sort_by { |committee, count| [-count, committee] }.map { |committee, count| "#{count} #{committee}" }.join ', ' }"
+  puts "  official:  #{official[teryt].sort_by  { |committee, count| [-count, committee] }.map { |committee, count| "#{count} #{committee}" }.join ', ' }"
   puts "  potential: #{potential[teryt].sort_by { |committee, count| [-count, committee] }.map { |committee, count| "#{count} #{committee}" }.join ', ' }"
 end
