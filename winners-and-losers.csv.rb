@@ -12,8 +12,8 @@ csv = CSV.generate col_sep: ';' do |rows|
   constituencies.each do |unit, teryt, constituency|
     cons = councillors.select { |c| c.teryt == teryt and c.constituency == constituency }
     winners, losers = cons.partition &:elected
-    winner = winners.sort_by(&:percent).first
-    loser  = losers.sort_by(&:percent).last || Councillor.new
+    winner = winners.sort_by(&:votes).first
+    loser  = losers.sort_by(&:votes).last || Councillor.new
     rows << [unit, teryt, constituency, cons.size, winners.size, losers.size, winner.votes, loser.votes, losers.select { |l| l.votes > winner.votes }.size]
   end
 end
