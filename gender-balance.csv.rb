@@ -14,11 +14,9 @@ level = ARGV.last.to_sym
 
 raise "wrong level: #{level} not one of #{level2teryt.keys.join ', '}" unless level2teryt.keys.include? level
 
-teryt2cons = councillors.group_by { |c| level2teryt[level].call c.teryt }
-
 csv = CSV.generate col_sep: ';' do |rows|
   rows << ['TERYT', 'women candidates', 'candidates', 'candidate%', 'women elected', 'elected', 'elected%']
-  teryt2cons.each do |teryt, cons|
+  councillors.group_by { |c| level2teryt[level].call c.teryt }.each do |teryt, cons|
     women = cons.select { |c| c.gender == :female }
     rows << [
       teryt,
