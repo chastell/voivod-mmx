@@ -27,11 +27,15 @@ if the seats were assigned based solely on the number of
 votes received by a given candidate (rather than the current
 system, which distributes the votes based on the lists).
 
+`gender-balance` shows the electability of women – a comparison of
+percentage of women on the election lists with the percentage elected.
+
 scripts
 -------
 
-`winners-and-losers.csv.rb` and `lists-changes.csv.rb`
-were used to generate the CSV files for the above analyses.
+`winners-and-losers.csv.rb`, `lists-changes.csv.rb`
+and `gender-balance.csv.rb` were used to generate
+the CSV files for the above analyses.
 
 `winners-and-losers.rb` can be used to see human-readable data:
 
@@ -79,3 +83,23 @@ were used to generate the CSV files for the above analyses.
     summary:
       official:  1915 KOMITET WYBORCZY PLATFORMA OBYWATELSKA RP, 1450 KOMITET WYBORCZY PRAWO I SPRAWIEDLIWOŚĆ, 1007 KOMITET WYBORCZY POLSKIE STRONNICTWO LUDOWE, […]
       potential: 1880 KOMITET WYBORCZY PLATFORMA OBYWATELSKA RP, 1517 KOMITET WYBORCZY PRAWO I SPRAWIEDLIWOŚĆ, 988 KOMITET WYBORCZY POLSKIE STRONNICTWO LUDOWE, […]
+
+`gender-balance.rb` can be used to see human-readable data:
+
+    $ ruby gender-balance.rb dumps/voivodeship.dump voivodeship
+            dolnośląskie:  156 of   549 (28%) candidates,   10 of 36 (28%) elected
+      kujawsko-pomorskie:  188 of   616 (31%) candidates,    8 of 33 (24%) elected
+               lubelskie:  179 of   634 (28%) candidates,    6 of 33 (18%) elected
+                lubuskie:  115 of   401 (29%) candidates,    6 of 30 (20%) elected
+                 łódzkie:  186 of   585 (32%) candidates,   13 of 36 (36%) elected
+             małopolskie:  184 of   669 (28%) candidates,    8 of 39 (21%) elected
+             mazowieckie:  334 of   975 (34%) candidates,   17 of 51 (33%) elected
+                opolskie:   95 of   337 (28%) candidates,    5 of 30 (17%) elected
+            podkarpackie:  124 of   459 (27%) candidates,    4 of 33 (12%) elected
+               podlaskie:   68 of   359 (19%) candidates,    2 of 30 ( 7%) elected
+               pomorskie:  174 of   526 (33%) candidates,    9 of 33 (27%) elected
+                 śląskie:  311 of  1047 (30%) candidates,   13 of 48 (27%) elected
+          świętokrzyskie:  145 of   473 (31%) candidates,    3 of 30 (10%) elected
+     warmińsko-mazurskie:  108 of   357 (30%) candidates,    7 of 30 (23%) elected
+           wielkopolskie:  162 of   540 (30%) candidates,    7 of 39 (18%) elected
+      zachodniopomorskie:  121 of   377 (32%) candidates,    9 of 30 (30%) elected
