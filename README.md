@@ -103,3 +103,7 @@ the CSV files for the above analyses.
      warmińsko-mazurskie:  108 of   357 (30%) candidates,    7 of 30 (23%) elected
            wielkopolskie:  162 of   540 (30%) candidates,    7 of 39 (18%) elected
       zachodniopomorskie:  121 of   377 (32%) candidates,    9 of 30 (30%) elected
+
+---
+
+© MMX-MMXI Piotr Szotkowski <chastell@chastell.net>, licensed under AGPL 3 (see LICENCE)
